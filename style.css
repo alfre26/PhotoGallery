@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+
+/*  MANSONRY LAYOUTS */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  min-height: 100vh;
+}
+.encabezado {
+  background-color: #1b262c;
+  padding: 1.3rem;
+  text-align: center;
+  color: #fff;
+  font-family: "Bangers", cursive;
+  letter-spacing: 4px;
+  font-size: 36px;
+}
+h1 {
+  margin: 2em 0;
+}
+img {
+  width: 100%;
+}
+.container {
+  width: 95%;
+  margin: 5% auto;
+}
+.grid {
+  /* display: flex; */
+  columns: 2;
+  column-gap: 10px;
+}
+
+.grid-col {
+  /* flex: 1; */
+  padding: 0 0.1em;
+}
+
+.grid-col--2,
+.grid-col--3 {
+  display: none;
+}
+
+.content {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  margin-top: 1em;
+}
+
+.content h1 {
+  margin: 0.2em 0.5em;
+  font-size: 1em;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  transform: translateY(-1em);
+}
+.pagination a {
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+.pagination a:first-child {
+  border-radius: 5px 0 0 5px;
+}
+
+.pagination a:last-child {
+  border-radius: 0 5px 5px 0;
+}
+
+.content {
+  opacity: 0;
+  transform: translateX(-0.5em);
+  transition: all 1.3s;
+  will-change: opacity, transform;
+}
+.grid-item {
+  cursor: pointer;
+}
+.grid-item:hover .content {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+footer{
+  text-align: center;
+  padding: 20px;
+  background: #27496d;
+  font-family: "Bangers", cursive;
+  color: #fff;
+  font-size: 28px;
+  letter-spacing: 2px;
+  
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 90%;
+  }
+  h1 {
+    margin: 3em 0;
+  }
+  .grid-col--2 {
+    display: block;
+  }
+  .grid-col {
+    padding: 0 0.5em;
+  }
+  .grid {
+    /* display: flex; */
+    columns: 3;
+    column-gap: 10px;
+  }
+  .img {
+    margin-bottom: 0.8em;
+  }
+  .content {
+    opacity: 0;
+    transform: translateX(-0.5em);
+    transition: all 1.3s;
+    will-change: opacity, transform;
+  }
+  .grid-item {
+    cursor: pointer;
+  }
+  .grid-item:hover .content {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (min-width: 1080px) {
+  .grid {
+    /* display: flex; */
+    columns: 4;
+    column-gap: 10px;
+  }
+}
